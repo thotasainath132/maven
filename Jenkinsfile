@@ -22,4 +22,4 @@ node('master')
         sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.43.104:/var/lib/tomcat8/webapps/prodapp.war'
     }
     
-  }
+ }
