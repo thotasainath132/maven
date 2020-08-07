@@ -1,14 +1,14 @@
 node('master') 
 {
-    stage('ContinuousDownload') 
+    stage('ContinuousDownload_pb') 
     {
          git 'https://github.com/thotasainath132/maven.git'
     }
-     stage('ContinuousBuild') 
+     stage('ContinuousBuild_pb') 
     {
         sh label: '', script: 'mvn package'
     }
-    stage('ContinuousDeployment')
+    stage('ContinuousDeployment_pb')
     {
         sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/scriptedpipeline/webapp/target/webapp.war ubuntu@172.31.40.157:/var/lib/tomcat8/webapps/qaapp.war'
     }
